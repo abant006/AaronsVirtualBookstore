@@ -11,8 +11,8 @@
 
 
 #include <iostream>
+#include <ostream>
 #include <string>
-#include <vector>
 
 // each node will be a book entry
 // each entry in the shop will have the book's ID number, name, author, publish date, price, and a BookEntry pointer storing the address of the next entry in the shop.
@@ -25,7 +25,7 @@ struct BookEntry {
     BookEntry *next;
 
     // inline constructor
-    BookEntry(int pID, std::string pBookName, std::string pAuthor, int pPub, int pPrice) 
+    BookEntry(int pID, const std::string &pBookName, const std::string &pAuthor, int pPub, int pPrice) 
     : id(pID), bookName(pBookName), author(pAuthor), publishDate(pPub), price(pPrice), next(nullptr) {}
 };
 
@@ -38,31 +38,38 @@ class BookList {
         // assignment operator
         void operator=(const BookList &cpy);
         // mutators
-        void push_back(const std::string & , const std::string & , int , int );
-        void push_front(const std::string & , const std::string & , int , int );
-        void remove(int );
-        void remove(const std::string & );
-        void selection_sort();
-        void insert_ordered(const std::string & , const std::string & , int , int );
+        void push_back(int, const std::string & , const std::string & , int , int );
+        void push_front(int, const std::string & , const std::string & , int , int );
+        void clear();
+        void setName(int tempID, const std::string &tempName);
+        void setPrice(int tempID, int tempPrice);
+        void setAuthor(int tempID, const std::string &tempName);
+        void setPubDate(int tempID, int tempDate);
+        void pop_back();
+        void pop_front();
+        // void remove(int tempID); // via ID
+        // void selection_sort();
+        // void insert_ordered(const std::string & , const std::string & , int , int );
+        
         // accessors
-        // note: SEE PRIVATE HELPER FUNCTION BELOW
-        bool in(int , const std::string & ) const; // is two parameters here the right move? would 2 in() functions be better?
+        std::string getName(int tempID) const; // think about & with return type here
+        int getPrice(int tempID) const;
+        std::string getAuthor(int tempID) const;
+        int getPubDate(int tempID) const;
+        
 
         // output operator somewhere for printing the list
-
-        // adds integer ID values to the IDList vector (meant for classes using this one, that are opening/reading from text file)
-        void initIDList(int );
+        friend std::ostream & operator<<(std::ostream &o, const BookList &list);
 
     private:
         BookEntry *head;
         BookEntry *tail;
 
-        // private helper function that scans the vector to see if the ID has already been added before creating a node with a unique ID
-        // bool in(int );
+        // private helper functions
 
-        // temporary measure: vector that stores all the ID's to check if one has been used already
-        // might be a bad solution but just adding for now
-        std::vector<int> IDList;
+        // make this const, we don't want it to modify the list
+        BookEntry * linearSearch(int tempID) const; // returns a BookEntry pointer (an address)
+
 };
 
 #endif //__BOOKLIST_H__
