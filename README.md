@@ -1,3 +1,3 @@
 # Aaron's Online Bookstore
 
-ABOUT ME IS WIP!
+ABOUT ME FOR THIS PROJECT IS WIP!
