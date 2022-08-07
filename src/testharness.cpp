@@ -210,8 +210,66 @@ void testSetGetDateEmpty() {
 
 // test out the pop functions
 
+void testPopFront() {
+    myList.push_back(855079, "Hi1", "Author1", 2019, 45);
+    //std::cout << myList << std::endl;
+    myList.push_back(30, "Percy Jackson", "Rick Riordan", 2024, 15);
+    myList.push_back(31, "Harry Potter", "J.K. Rowling", 2012, 18);
+    myList.push_back(32, "The Magic Tree House", "Idk who wrote this", 2023, 10);
+    myList.push_back(33, "Diary of a Wimpy Kid", "Jeff Kinney", 2062, 3);
+    std::cout << myList << std::endl;
+
+    myList.pop_front();
+    std::cout << myList << std::endl;
+    myList.pop_front();
+    std::cout << myList << std::endl;
+    myList.pop_front();
+    std::cout << myList << std::endl;
+    myList.pop_front();
+    std::cout << myList << std::endl;
+    myList.pop_front();
+    std::cout << myList << std::endl;
+}
+
+void testPopBack() {
+    myList.push_back(855079, "Hi1", "Author1", 2019, 45);
+    //std::cout << myList << std::endl;
+    myList.push_back(30, "Percy Jackson", "Rick Riordan", 2024, 15);
+    myList.push_back(31, "Harry Potter", "J.K. Rowling", 2012, 18);
+    myList.push_back(32, "The Magic Tree House", "Idk who wrote this", 2023, 10);
+    myList.push_back(33, "Diary of a Wimpy Kid", "Jeff Kinney", 2062, 3);
+    std::cout << myList << std::endl;
+
+    myList.pop_back();
+    std::cout << myList << std::endl;
+    myList.pop_back();
+    std::cout << myList << std::endl;
+    myList.pop_back();
+    std::cout << myList << std::endl;
+    myList.pop_back();
+    std::cout << myList << std::endl;
+    myList.pop_back();
+    std::cout << myList << std::endl;
+}
+
+void testRemove() {
+    myList.push_back(855079, "Hi1", "Author1", 2019, 45);
+    myList.push_back(30, "Percy Jackson", "Rick Riordan", 2024, 15);
+    // myList.push_back(31, "Harry Potter", "J.K. Rowling", 2012, 18);
+    // myList.push_back(32, "The Magic Tree House", "Idk who wrote this", 2023, 10);
+    // myList.push_back(33, "Diary of a Wimpy Kid", "Jeff Kinney", 2062, 3);
+    std::cout << myList << std::endl;
+
+    myList.remove(30);
+    std::cout << myList << std::endl;
+    myList.remove(855078);
+    std::cout << myList << std::endl;
+    myList.remove(855079);
+    myList.remove(855079);
+}
+
 int main() {
-    testPushBackOutPut();
+    //testPushBackOutPut();
     //testClearZeroEntries();
 
     //testPushFront();
@@ -228,4 +286,9 @@ int main() {
 
     //testSetGetDate();
     //testSetGetDateEmpty();
+
+    //testPopFront();
+    //testPopBack();
+
+    testRemove();
 }

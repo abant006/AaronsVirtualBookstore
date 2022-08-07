@@ -207,6 +207,50 @@ void BookList::pop_back() {
     }
 }
 
+void BookList::remove(int tempID) {
+    // create 2 temp pointers
+    BookEntry *curr = nullptr;
+    BookEntry *prev = nullptr;
+
+    // only remove if the list is not empty
+    if (head != nullptr) {
+        // first condition, if the entry we want to remove is in the front 
+        if (tempID == head->id) {
+            pop_front();
+        }
+        // second condition, if the entry we want to remove is in the back
+        else if (tempID == tail->id) {
+            pop_back();
+        }
+        // third condition, just remove from elsewhere on the list
+        else {
+            curr = head->next;
+            prev = head;
+
+            // loop through the list
+            while (curr != nullptr) {
+                if (curr->id == tempID) {
+                    prev->next = curr->next; // link previous node to current's next node
+                    delete curr;
+                    break;
+                }
+                // loop to the next node
+                curr = curr->next;
+                prev = prev->next;
+            }
+
+            // after traversal is complete (either from no match, or breaking out because a match occurs)
+            // if curr == nullptr, then that means there was no matching ID
+            if (curr == nullptr) {
+                std::cout << "Cannot remove: No matching ID was found." << std::endl;
+            }
+        }
+    }
+    else { // IF THE LIST IS EMPTY, and you're trying to remove from it...
+        std::cout << "Cannot remove: The list is empty!" << std::endl;
+    }
+}
+
 // ACCESSORS
 
 // searches the list to see if there is a bookentry that matches the parameter ID, if so return the name of that book entry
