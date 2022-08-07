@@ -47,9 +47,8 @@ class BookList {
         void setPubDate(int tempID, int tempDate);
         void pop_back();
         void pop_front();
-        // void remove(int tempID); // via ID
+        void remove(int tempID); // via ID
         // void selection_sort();
-        // void insert_ordered(const std::string & , const std::string & , int , int );
         
         // accessors
         std::string getName(int tempID) const; // think about & with return type here
