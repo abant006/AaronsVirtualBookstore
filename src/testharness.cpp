@@ -268,6 +268,19 @@ void testRemove() {
     myList.remove(855079);
 }
 
+void testSelectionSort() {
+    myList.push_back(15, "Diary of a Wimpy Kid", "Jeff Kinney", 2062, 3);
+    // myList.push_back(24, "The Magic Tree House", "Idk who wrote this", 2023, 10);
+    // myList.push_back(30, "Percy Jackson", "Rick Riordan", 2024, 15);
+    // myList.push_back(565, "Harry Potter", "J.K. Rowling", 2012, 18);
+    // myList.push_back(855079, "Hi1", "Author1", 2019, 45);
+    std::cout << myList << std::endl;
+
+    myList.selection_sort();
+
+    std::cout << myList << std::endl;
+}
+
 int main() {
     //testPushBackOutPut();
     //testClearZeroEntries();
@@ -290,5 +303,7 @@ int main() {
     //testPopFront();
     //testPopBack();
 
-    testRemove();
+    //testRemove();
+
+    testSelectionSort();
 }

@@ -251,6 +251,45 @@ void BookList::remove(int tempID) {
     }
 }
 
+void BookList::selection_sort() {
+    // create 2 temp pointers for traversing the list/comparison
+    BookEntry *i = nullptr;
+    BookEntry *j = nullptr;
+    // create one min pointer that will store the address of the lowest id in the list
+    BookEntry *min = nullptr;
+
+    // only loop if the list is not empty
+    if (head != nullptr) {
+        i = head; // start at head
+        while (i != tail) {
+            // start each iteration with min pointing to i
+            min = i;
+            // start each iteration with j pointing to i->next
+            j = i->next;
+
+            // inner loop, until j == nullptr
+            while (j != nullptr) {
+                if (j->id < min->id) {
+                    min = j; // if the id at j is less than the id at min, then make j the new min
+                }
+                j = j->next;
+            }
+
+            // only perform swaps if min is less than i
+            if (min->id < i->id) {
+                std::swap(i->id, min->id);
+                std::swap(i->bookName, min->bookName);
+                std::swap(i->author, min->author);
+                std::swap(i->publishDate, min->publishDate);
+                std::swap(i->price, min->price);
+            }
+
+            // now move i to the next node
+            i = i->next;
+        }
+    }
+}
+
 // ACCESSORS
 
 // searches the list to see if there is a bookentry that matches the parameter ID, if so return the name of that book entry

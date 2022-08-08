@@ -48,7 +48,7 @@ class BookList {
         void pop_back();
         void pop_front();
         void remove(int tempID); // via ID
-        // void selection_sort();
+        void selection_sort();
         
         // accessors
         std::string getName(int tempID) const; // think about & with return type here
