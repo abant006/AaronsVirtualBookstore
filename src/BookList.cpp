@@ -41,8 +41,25 @@ BookList::BookList(const BookList &cpy) {
 }
 
 // assignment operator
-void BookList::operator=(const BookList &cpy) {
-    // TODO!!
+BookList & BookList::operator=(const BookList &cpy) {
+    // first check to see if you're assigning a BookList to itself
+    if (this != &cpy) { // using address of operator to compare the two addresses ("this" is a pointer to implicit param)
+        // before copying the cpy list into the implicit param, clear the implicit param's first
+        this->clear(); // this also makes it so if the cpy list is empty, the assignment operator will STILL return an empty list
+
+        // now copy as you would in the copy constructor
+        BookEntry *temp = nullptr;
+        temp = cpy.head;
+
+        // only do the copying if the cpy's list is NOT empty
+        if (cpy.head != nullptr) {
+            while (temp != nullptr) {
+                this->push_back(temp->id, temp->bookName, temp->author, temp->publishDate, temp->price);
+                temp = temp->next;
+            }
+        }
+    }
+    return *this; // return the list stored in the this pointer, hence dereferencing (return type is a list)
 }
 
 void BookList::push_back(int tempID, const std::string &tempBookName, const std::string &tempAuthor, int tempPub, int tempPrice) {

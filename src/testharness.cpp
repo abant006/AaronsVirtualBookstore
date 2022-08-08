@@ -301,11 +301,40 @@ void testCopyConstructor() {
     std::cout << newList << std::endl;
 }
 
-void testCopyConstructorEmpty() {
+void testAssignmentOperator() {
+    std::cout << "Testing the Assignment Operator" << std::endl;
 
+    myList.push_back(15, "Diary of a Wimpy Kid", "Jeff Kinney", 2062, 3);
+    myList.push_back(24, "The Magic Tree House", "Idk who wrote this", 2023, 10);
+    myList.push_back(855079, "Hi1", "Author1", 2019, 45);
+    myList.push_back(30, "Percy Jackson", "Rick Riordan", 2024, 15);
+    myList.push_back(565, "Harry Potter", "J.K. Rowling", 2012, 18);
+    std::cout << "First List: " << std::endl;
+    std::cout << myList << std::endl;
+
+    std::cout << std::endl;
+
+    // create a new list
+    BookList newList;
+
+    // push_back some "fake values"
+    newList.push_back(33, "BookOne", "AuthorOne", 2062, 9);
+    newList.push_back(678, "BookTwo", "AuthorTwo", 2023, 78);
+    newList.push_back(8079, "BookThree", "AuthorThree", 2019, 64564);
+
+    // now use the assignment operator to set mylist to newList
+    newList = myList;
+    // newList.operator=(myList); // another way to write
+
+    // now print the new list
+    std::cout << "Second List: " << std::endl;
+    std::cout << newList << std::endl;
 }
 
 int main() {
+    // RUN ONE TEST AT A TIME
+
+    
     //testPushBackOutPut();
     //testClearZeroEntries();
 
@@ -331,5 +360,6 @@ int main() {
 
     //testSelectionSort();
 
-    testCopyConstructor();
+    //testCopyConstructor();
+    testAssignmentOperator();
 }
