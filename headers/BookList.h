@@ -36,7 +36,7 @@ class BookList {
         BookList(const BookList &cpy); // copy constructor (might need const, idk)
         ~BookList();
         // assignment operator
-        void operator=(const BookList &cpy);
+        BookList & operator=(const BookList &cpy); // return a reference to the BookList object (not a copy)
         // mutators
         void push_back(int, const std::string & , const std::string & , int , int );
         void push_front(int, const std::string & , const std::string & , int , int );
