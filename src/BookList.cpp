@@ -9,6 +9,7 @@
 
 #include "../headers/BookList.h"
 #include <iostream>
+#include <iomanip>
 
 // destructor (Just have it call the clear function)
 BookList::~BookList() {
@@ -410,7 +411,11 @@ std::ostream & operator<<(std::ostream &o, const BookList &list) {
     if (temp != nullptr) {
         while (temp != nullptr) {
             // print each Entry's info in a formatted way before going to the next entry
-            o << temp->id << "\t\t\t" << temp->bookName << "\t\t\t" << temp->author << "\t\t\t" << temp->publishDate << "\t\t\t" << "$" << temp->price << std::endl;
+            o << temp->id << std::setw(40); 
+            o << temp->bookName << std::setw(40);
+            o << temp->author << std::setw(40);
+            o << temp->publishDate << std::setw(40);
+            o << "$" << temp->price << std::endl;
 
             // move the temp pointer to the next entry
             temp = temp->next;

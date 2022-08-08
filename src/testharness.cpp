@@ -269,11 +269,11 @@ void testRemove() {
 }
 
 void testSelectionSort() {
-    myList.push_back(15, "Diary of a Wimpy Kid", "Jeff Kinney", 2062, 3);
-    // myList.push_back(24, "The Magic Tree House", "Idk who wrote this", 2023, 10);
-    // myList.push_back(30, "Percy Jackson", "Rick Riordan", 2024, 15);
-    // myList.push_back(565, "Harry Potter", "J.K. Rowling", 2012, 18);
-    // myList.push_back(855079, "Hi1", "Author1", 2019, 45);
+    myList.push_back(858239, "Diary of a Wimpy Kid", "Jeff Kinney", 2062, 3);
+    myList.push_back(859879, "The Magic Tree House", "Idk who wrote this", 2023, 10);
+    myList.push_back(811079, "Hi1", "Author1", 2019, 45);
+    myList.push_back(855079, "Percy Jackson", "Rick Riordan", 2024, 15);
+    myList.push_back(825079, "Harry Potter", "J.K. Rowling", 2012, 18);
     std::cout << myList << std::endl;
 
     myList.selection_sort();
@@ -304,11 +304,11 @@ void testCopyConstructor() {
 void testAssignmentOperator() {
     std::cout << "Testing the Assignment Operator" << std::endl;
 
-    myList.push_back(15, "Diary of a Wimpy Kid", "Jeff Kinney", 2062, 3);
-    myList.push_back(24, "The Magic Tree House", "Idk who wrote this", 2023, 10);
-    myList.push_back(855079, "Hi1", "Author1", 2019, 45);
-    myList.push_back(30, "Percy Jackson", "Rick Riordan", 2024, 15);
-    myList.push_back(565, "Harry Potter", "J.K. Rowling", 2012, 18);
+    myList.push_back(858239, "Diary of a Wimpy Kid", "Jeff Kinney", 2062, 3);
+    myList.push_back(859879, "The Magic Tree House", "Idk who wrote this", 2023, 10);
+    myList.push_back(811079, "Hi1", "Author1", 2019, 45);
+    myList.push_back(855079, "Percy Jackson", "Rick Riordan", 2024, 15);
+    myList.push_back(825079, "Harry Potter", "J.K. Rowling", 2012, 18);
     std::cout << "First List: " << std::endl;
     std::cout << myList << std::endl;
 
@@ -334,7 +334,7 @@ void testAssignmentOperator() {
 int main() {
     // RUN ONE TEST AT A TIME
 
-    
+
     //testPushBackOutPut();
     //testClearZeroEntries();
 
@@ -358,8 +358,8 @@ int main() {
 
     //testRemove();
 
-    //testSelectionSort();
+    testSelectionSort();
 
     //testCopyConstructor();
-    testAssignmentOperator();
+    //testAssignmentOperator();
 }
