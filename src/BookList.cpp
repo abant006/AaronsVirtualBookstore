@@ -17,10 +17,29 @@ BookList::~BookList() {
     // BookList:: just shows that clear() is a function belonging to the BookList class
     this->BookList::clear();
 }
+
 // copy constructor
 BookList::BookList(const BookList &cpy) {
-    // TODO!!!
+    // first initialize the implicit parameter's head and tail to be nullptr
+    this->head = nullptr;
+    this->tail = nullptr;
+
+    // create a temp BookEntry pointer which will interate the parameter list to copy the values over
+    // a list cannot traverse a list
+    BookEntry *temp = nullptr;
+    temp = cpy.head;
+
+    // iterate temp through the cpy list, and push back those same values into the implicit param's list
+    // only iterate if the cpy list is NOT empty
+    if (cpy.head != nullptr) {
+        while (temp != nullptr) {
+            // call push back on the implicit param
+            this->push_back(temp->id, temp->bookName, temp->author, temp->publishDate, temp->price);
+            temp = temp->next;
+        }
+    }
 }
+
 // assignment operator
 void BookList::operator=(const BookList &cpy) {
     // TODO!!

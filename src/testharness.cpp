@@ -281,6 +281,30 @@ void testSelectionSort() {
     std::cout << myList << std::endl;
 }
 
+void testCopyConstructor() {
+    myList.push_back(15, "Diary of a Wimpy Kid", "Jeff Kinney", 2062, 3);
+    myList.push_back(24, "The Magic Tree House", "Idk who wrote this", 2023, 10);
+    myList.push_back(855079, "Hi1", "Author1", 2019, 45);
+    myList.push_back(30, "Percy Jackson", "Rick Riordan", 2024, 15);
+    myList.push_back(565, "Harry Potter", "J.K. Rowling", 2012, 18);
+    std::cout << "First List: " << std::endl;
+    std::cout << myList << std::endl;
+
+    std::cout << std::endl;
+
+    // create a new list and call the copy constructor
+    BookList newList(myList); // one way
+    //BookList newList = myList; // another way
+
+    // now print the new list
+    std::cout << "Second List: " << std::endl;
+    std::cout << newList << std::endl;
+}
+
+void testCopyConstructorEmpty() {
+
+}
+
 int main() {
     //testPushBackOutPut();
     //testClearZeroEntries();
@@ -305,5 +329,7 @@ int main() {
 
     //testRemove();
 
-    testSelectionSort();
+    //testSelectionSort();
+
+    testCopyConstructor();
 }
