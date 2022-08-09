@@ -1,5 +1,5 @@
 /**
- * @file StoreUser.h
+ * @file StoreUser.cpp
  * @author Aaron Bantay (https://github.com/abant006)
  * 
  * cpp file for the StoreUser class.
@@ -10,3 +10,9 @@
  *      AND IT WILL USE ANY OF THE CHANGE FUNCTIONS FROM THE BOOKLIST BASED OFF THE INPUT
  * 
  */
+
+#include "../headers/StoreUser.h"
+#include <iostream>
+#include <string>
+#include <vector>
+

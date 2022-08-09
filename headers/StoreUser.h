@@ -10,8 +10,35 @@
  * TLDR: This class serves as a way for derived classes to access the list of books within the shop. In a way, this class is BOTH the user and the store. Holds the list of book entries
  *       seen in a store, but has functions that modifies/accesses those entries like a user would.
  * 
+ * CREATE A PRIVATE DATA MEMBER FOR THE CUSTOMER CLASS THAT IS A DISCOUNT CODE (STRING)
+ * 
  */
+#ifndef __STOREUSER_H__
+#define __STOREUSER_H__
 
-/**
- * std::vector<int> IDList;
- */
+#include "BookList.h"
+#include <vector>
+
+class StoreUser {
+    public:
+        // constructor and destructor
+        StoreUser();
+        ~StoreUser(); // this should just call bookstoreList's destructor
+        
+        // mutators
+        void filter();
+        virtual void purchase() = 0; // pure virtual function that should be overriden by subclasses
+
+        // accessors
+        void output() const;
+
+    private:
+        BookList bookstoreList;
+        std::vector<int> IDList; // stores any and all currently/previously used Book ID's to ensure no duplicates are made
+        
+        // private helper functions
+        bool isDuplicate(); // checks to see if there are any duplicates within the IDList
+};
+
+
+#endif //__STOREUSER_H__
