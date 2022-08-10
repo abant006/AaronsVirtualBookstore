@@ -27,3 +27,28 @@ bool Admin::verification(const std::string &tempUser, const std::string &tempPas
         return false;
     }
 }
+
+// this function is only accessible to Admin class (meaning base class and other subclasses cant use it)
+void Admin::displayIDList() {
+    // loop through the array displaying each member out in a comma seperated list
+    for (auto i = 0; i < IDList.size(); i++) {
+        if (i == IDList.size() - 1) {
+            std::cout << IDList.at(i) << std::endl;
+        } else {
+            std::cout << IDList.at(i) << ", ";
+        }
+    }
+}
+
+// private helper function
+bool Admin::isDuplicate(int keyID) const{
+    // loop through the IDList and if there is any ID's that matches the key then remove false
+    for (auto i = 0; i < IDList.size(); i++) {
+        if (keyID == IDList.at(i)) {
+            return true;
+        }
+    }
+
+    // if the loop exits, that means there's no duplicate ID
+    return false;
+}

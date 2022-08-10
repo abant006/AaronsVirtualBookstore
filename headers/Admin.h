@@ -28,13 +28,18 @@ class Admin : public StoreUser {
 
         // mutators
         void modInfo();
+    
         // accessor
         bool verification(const std::string &tempUser, const std::string &tempPass) const;
+        void displayIDList();
 
     private:
         // private data members exclusive to the Admin class
         std::string UserName;
         std::string Password;
+
+        // private helper functions
+        bool isDuplicate(int keyID) const; // checks to see if there are any duplicates within the IDList
 };
 
 #endif //__ADMIN_H__

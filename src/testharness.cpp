@@ -4,6 +4,7 @@
 
 #include "../headers/BookList.h"
 #include "../headers/StoreUser.h"
+#include "../headers/Admin.h"
 
 // global list to do work on
 BookList myList;
@@ -349,6 +350,76 @@ void testStoreSort() {
     myStore.output();
 }
 
+//---------------------------------------------------------------------------
+//---------------------------------------------------------------------------
+//---------------------------------------------------------------------------
+
+Admin newAdmin;
+
+void testAdminOutput() {
+    std::cout << "Testing output() for Admin class: " << std::endl;
+    newAdmin.output();
+}
+
+void testAdminSort() {
+    std::cout << "Testing filter() for Admin class: " << std::endl;
+    newAdmin.filter();
+    newAdmin.output();
+}
+
+// use this function in actual main
+void testVerification() {
+    std::string tempUser = "";
+    std::string tempPass = "";
+    bool loginCond = false;
+    int logoutCntr = 0;
+
+    std::cout << "Enter your username: " << std::endl;
+    std::cin >> tempUser;
+    std::cout << "Enter your password: " << std::endl;
+    std::cin >> tempPass;
+    loginCond = newAdmin.verification(tempUser, tempPass);
+    logoutCntr++;
+
+    while (loginCond == false && logoutCntr < 3) {
+        std::cout << "Incorrect login credentials! Please enter again." << std::endl << std::endl;
+        std::cout << "Enter your username: " << std::endl;
+        std::cin >> tempUser;
+        std::cout << "Enter your password: " << std::endl;
+        std::cin >> tempPass;
+        loginCond = newAdmin.verification(tempUser, tempPass);
+        logoutCntr++;
+    }
+
+    // check first to see if the login condition is true after the loop exits
+    if (loginCond == true) {
+        std::cout << "You have logged in successfuly." << std::endl << std::endl;
+    }
+
+    // if false then the login condition has failed, and the user has tried too many times
+    else {
+        std::cout << "You have entered the wrong creditials repeatedly. Please try again later." << std::endl;
+        // put in an exit function here to close the program
+        //exit(1);
+    }
+}
+
+void testDisplayIDList() {
+    newAdmin.displayIDList();
+}
+
+// void testDuplicateID() {
+//     int tempID = 0;
+//     std::cout << "Enter an ID Number: " << std::endl;
+//     std::cin >> tempID;
+
+//     if (newAdmin.isDuplicate(tempID) == true) {
+//         std::cout << "ERROR! The ID already exits!" << std::endl;
+//     } else {
+//         std::cout << "The ID is not in the list yet. No duplicates." << std::endl;
+//     }
+// }
+
 int main() {
     // RUN ONE TEST AT A TIME
 
@@ -385,5 +456,14 @@ int main() {
 
 
     //testStoreUserOutput();
-    testStoreSort();
+    //testStoreSort();
+
+
+
+    //testAdminOutput();
+    //testAdminSort();
+    //testVerification();
+
+    //testDisplayIDList();
+    //testDuplicateID();
 }

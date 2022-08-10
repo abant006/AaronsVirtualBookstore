@@ -35,8 +35,6 @@ class StoreUser {
         // accessors
         void output() const;
 
-        // display IDList function? for admins maybe.. or we can do so in here for now
-
     protected:
         // IN STOREUSER'S CONSTRUCTOR DO I HAVE TO CALL BOOKSTORELIST'S CONSTRUCTOR? OR HOW DOES IT WORK
         BookList bookstoreList;
@@ -46,7 +44,6 @@ class StoreUser {
         // private helper functions
 
         //USE THIS FOR THE ADMIN SUBCLASS
-        //bool isDuplicate(); // checks to see if there are any duplicates within the IDList
         void SkipBOM(std::ifstream &in); // skips the Byte Order Mark (BOM) that defines UTF-8 in some text files
 };
 
