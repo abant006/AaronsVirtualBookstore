@@ -26,6 +26,11 @@ class Admin : public StoreUser {
         // default constructor
         Admin();
 
+        // mutators
+        void modInfo();
+        // accessor
+        bool verification(const std::string &tempUser, const std::string &tempPass) const;
+
     private:
         // private data members exclusive to the Admin class
         std::string UserName;
