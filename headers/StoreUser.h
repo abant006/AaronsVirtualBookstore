@@ -18,6 +18,7 @@
 
 #include "BookList.h"
 #include <vector>
+#include <fstream>
 
 class StoreUser {
     public:
@@ -27,17 +28,26 @@ class StoreUser {
         
         // mutators
         void filter();
-        virtual void purchase() = 0; // pure virtual function that should be overriden by subclasses
+
+        // for purchasing, make it so that there's an "add to cart" feature
+        //virtual void purchase() = 0; // pure virtual function that should be overriden by subclasses
 
         // accessors
         void output() const;
 
+        // display IDList function? for admins maybe.. or we can do so in here for now
+
     private:
+        // IN STOREUSER'S CONSTRUCTOR DO I HAVE TO CALL BOOKSTORELIST'S CONSTRUCTOR? OR HOW DOES IT WORK
         BookList bookstoreList;
+        // SAME QUESTION HERE? OR HOW DO I CONSTRUCT IT???
         std::vector<int> IDList; // stores any and all currently/previously used Book ID's to ensure no duplicates are made
         
         // private helper functions
-        bool isDuplicate(); // checks to see if there are any duplicates within the IDList
+
+        //USE THIS FOR THE ADMIN SUBCLASS
+        //bool isDuplicate(); // checks to see if there are any duplicates within the IDList
+        void SkipBOM(std::ifstream &in); // skips the Byte Order Mark (BOM) that defines UTF-8 in some text files
 };
 
 

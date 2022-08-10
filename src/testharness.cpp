@@ -3,6 +3,7 @@
  */
 
 #include "../headers/BookList.h"
+#include "../headers/StoreUser.h"
 
 // global list to do work on
 BookList myList;
@@ -335,6 +336,19 @@ void testAssignmentOperator() {
 //---------------------------------------------------------------------------
 //---------------------------------------------------------------------------
 
+StoreUser myStore; // this will call the default constructor, thus reading from the dat file
+
+void testStoreUserOutput() {
+    myStore.output();
+}
+
+void testStoreSort() {
+    // call the filter function first
+    myStore.filter();
+    // output it after to see the changes (or no changes)
+    myStore.output();
+}
+
 int main() {
     // RUN ONE TEST AT A TIME
 
@@ -362,8 +376,14 @@ int main() {
 
     //testRemove();
 
-    testSelectionSort();
+    //testSelectionSort();
 
     //testCopyConstructor();
     //testAssignmentOperator();
+
+
+
+
+    //testStoreUserOutput();
+    testStoreSort();
 }
