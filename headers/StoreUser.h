@@ -37,7 +37,7 @@ class StoreUser {
 
         // display IDList function? for admins maybe.. or we can do so in here for now
 
-    private:
+    protected:
         // IN STOREUSER'S CONSTRUCTOR DO I HAVE TO CALL BOOKSTORELIST'S CONSTRUCTOR? OR HOW DOES IT WORK
         BookList bookstoreList;
         // SAME QUESTION HERE? OR HOW DO I CONSTRUCT IT???
