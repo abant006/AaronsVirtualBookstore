@@ -255,8 +255,8 @@ void testPopBack() {
 }
 
 void testRemove() {
-    myList.push_back(855079, "Hi1", "Author1", 2019, 45);
-    myList.push_back(30, "Percy Jackson", "Rick Riordan", 2024, 15);
+    // myList.push_back(855079, "Hi1", "Author1", 2019, 45);
+    // myList.push_back(30, "Percy Jackson", "Rick Riordan", 2024, 15);
     // myList.push_back(31, "Harry Potter", "J.K. Rowling", 2012, 18);
     // myList.push_back(32, "The Magic Tree House", "Idk who wrote this", 2023, 10);
     // myList.push_back(33, "Diary of a Wimpy Kid", "Jeff Kinney", 2062, 3);
@@ -408,6 +408,45 @@ void testDisplayIDList() {
     newAdmin.displayIDList();
 }
 
+// adds an entry to the list then outputs it (the list)
+void testAddEntryAndOutput() {
+    std::string tempName = "";
+    std::string tempAuthor = "";
+    int tempPub = 0;
+    int tempPrice = 0;
+
+    // prompt the admin to enter book entry information
+    std::cout << "Please enter a book name: ";
+    std::cin >> tempName;
+    std::cout << std::endl;
+    std::cout << "Please enter the author's name: ";
+    std::cin >> tempAuthor;
+    std::cout << std::endl;
+    std::cout << "Please enter the book's publish date: ";
+    std::cin >> tempPub;
+    std::cout << std::endl;
+    std::cout << "Please enter the book's price: ";
+    std::cin >> tempPrice;
+    std::cout << std::endl;
+
+    // use those values and call the admin's addEntry function
+    newAdmin.addEntry(tempName, tempAuthor, tempPub, tempPrice);
+
+    // now output the list;
+    newAdmin.output();
+}
+
+void testRemoveAndOutput() {
+    int tempID = 0;
+
+    // prompt user to enter an ID they want to remove
+    std::cout << "Please enter the ID of the entry you would like to remove: ";
+    std::cin >> tempID;
+
+    newAdmin.removeEntry(tempID);
+    newAdmin.output();
+}
+
 // void testDuplicateID() {
 //     int tempID = 0;
 //     std::cout << "Enter an ID Number: " << std::endl;
@@ -466,4 +505,7 @@ int main() {
 
     //testDisplayIDList();
     //testDuplicateID();
+
+    //testAddEntryAndOutput();
+    //testRemoveAndOutput();
 }

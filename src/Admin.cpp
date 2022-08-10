@@ -10,6 +10,9 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <time.h>
+#include <random>
+
 
 // inline constructor for admin class
 // since this class is inheriting from StoreUser, we must first call StoreUser's constructor to 
@@ -17,6 +20,28 @@
 // then we can initialize admin's data members UserName and Password to something predetermined (not something a user will be able to set)
 // so, the username and password has "already been set" by the time an admin want's to login
 Admin::Admin() : StoreUser(), UserName("StoreAdmin112"), Password("Password123") {}
+
+// mutators
+void Admin::addEntry(const std::string &tempName, const std::string &tempAuthor, int tempPub, int tempPrice) {
+    int tempID = 0;
+
+    // using the random() function to get a random ID number in the specified range
+    tempID = random();
+
+    // keep looping until we get a tempID that's not in the list
+    while (isDuplicate(tempID) != false) {
+        tempID = random();
+    }
+
+    // if it reaches here, then that means the tempID is NOT in the list
+    // with all the values we have now, push it back into the list
+    bookstoreList.push_back(tempID, tempName, tempAuthor, tempPub, tempPrice);
+}
+
+void Admin::removeEntry(int tempID) {
+    // just call the remove() function on the bookstoreList
+    bookstoreList.remove(tempID);
+}
 
 // accessors
 // this function will couple together with a helper function in main that loops for at most 3 times if the user fails to enter the correct username and password
@@ -51,4 +76,19 @@ bool Admin::isDuplicate(int keyID) const{
 
     // if the loop exits, that means there's no duplicate ID
     return false;
+}
+
+int Admin::random() {
+    int min = 850000;
+    int max = 860000;
+    int range = max - min + 1;
+    static bool first = true;
+
+    if (first) {
+        srand(time(NULL)); 
+        first = false;
+    }
+
+    // generates a random number
+    return rand() % range + min;
 }

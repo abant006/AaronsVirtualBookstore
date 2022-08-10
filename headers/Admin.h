@@ -28,7 +28,8 @@ class Admin : public StoreUser {
 
         // mutators
         void modInfo();
-    
+        void addEntry(const std::string &tempName, const std::string &tempAuthor, int tempPub, int tempPrice);
+        void removeEntry(int tempID);
         // accessor
         bool verification(const std::string &tempUser, const std::string &tempPass) const;
         void displayIDList();
@@ -40,6 +41,8 @@ class Admin : public StoreUser {
 
         // private helper functions
         bool isDuplicate(int keyID) const; // checks to see if there are any duplicates within the IDList
+        // random number generator
+        int random();
 };
 
 #endif //__ADMIN_H__
