@@ -337,18 +337,18 @@ void testAssignmentOperator() {
 //---------------------------------------------------------------------------
 //---------------------------------------------------------------------------
 
-StoreUser myStore; // this will call the default constructor, thus reading from the dat file
+//StoreUser myStore; // this will call the default constructor, thus reading from the dat file
 
-void testStoreUserOutput() {
-    myStore.output();
-}
+// void testStoreUserOutput() {
+//     myStore.output();
+// }
 
-void testStoreSort() {
-    // call the filter function first
-    myStore.filter();
-    // output it after to see the changes (or no changes)
-    myStore.output();
-}
+// void testStoreSort() {
+//     // call the filter function first
+//     myStore.filter();
+//     // output it after to see the changes (or no changes)
+//     myStore.output();
+// }
 
 //---------------------------------------------------------------------------
 //---------------------------------------------------------------------------

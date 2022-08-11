@@ -30,7 +30,7 @@ class StoreUser {
         void filter();
 
         // for purchasing, make it so that there's an "add to cart" feature
-        //virtual void purchase() = 0; // pure virtual function that should be overriden by subclasses
+        virtual void purchase(int tempID) = 0; // pure virtual function that should be overriden by subclasses
 
         // accessors
         void output() const;

@@ -30,6 +30,8 @@ class Admin : public StoreUser {
         void modInfo();
         void addEntry(const std::string &tempName, const std::string &tempAuthor, int tempPub, int tempPrice);
         void removeEntry(int tempID);
+        // overriden purchase function from the StoreUser base class
+        void purchase(int tempID); // TODO
         // accessor
         bool verification(const std::string &tempUser, const std::string &tempPass) const;
         void displayIDList();
