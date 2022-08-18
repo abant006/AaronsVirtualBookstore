@@ -459,6 +459,20 @@ void testRemoveAndOutput() {
 //     }
 // }
 
+// this function tests the admin class's overriden purchase function
+void testAdminPurchase() {
+    int id = 0;
+
+    newAdmin.output();
+
+    std::cout << "Please enter the book's ID: ";
+    std::cin >> id;
+
+    newAdmin.purchase(id);
+
+    newAdmin.output();
+}
+
 int main() {
     // RUN ONE TEST AT A TIME
 
@@ -507,5 +521,7 @@ int main() {
     //testDuplicateID();
 
     //testAddEntryAndOutput();
-    testRemoveAndOutput();
+    //testRemoveAndOutput();
+
+    testAdminPurchase();
 }

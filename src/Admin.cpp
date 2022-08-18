@@ -43,6 +43,36 @@ void Admin::removeEntry(int tempID) {
     bookstoreList.remove(tempID);
 }
 
+// the overriden purchase function
+// this function is unique to the ADMIN class because it automatically applies a 50% discount on the purchase
+void Admin::purchase(int tempID) {
+    // this will call the bookList's get functions to confirm with the user
+    std::string response = "";
+    // discount will be made constant. We dont want this to change under any cirumstance for admins
+    const int discount = 2;
+
+    // first see if the book exists within the list
+    if (bookstoreList.exists(tempID) == false) {
+        std::cout << "No purchase could be made because there exists no book in the store with a matching ID." << std::endl;
+    } else { // if it does exist
+        std::cout << "Because you are an Admin every purchase you make will have a 50\% discount." << std::endl;
+        std::cout << "Do you want to purchase the book " << bookstoreList.getName(tempID) << " for a total of $" << (bookstoreList.getPrice(tempID) / discount) << "?: ";
+        std::cin >> response;
+        while (response != "yes" && response != "no") {
+            std::cout << "Please enter a valid response (yes/no): ";
+            std::cin >> response;
+        }
+
+        // check for conditions
+        if (response == "yes") {
+            bookstoreList.remove(tempID);
+            std::cout << "The book has successfully been purchased! Thank you for your patronage." << std::endl;
+        } else {
+            std::cout << "The book will not be purchased." << std::endl;
+        }
+    }
+}
+
 // accessors
 // this function will couple together with a helper function in main that loops for at most 3 times if the user fails to enter the correct username and password
 bool Admin::verification(const std::string &tempUser, const std::string &tempPass) const {
