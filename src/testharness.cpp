@@ -6,6 +6,9 @@
 #include "../headers/StoreUser.h"
 #include "../headers/Admin.h"
 
+void modInfo();
+int modInfoIDHelper();
+
 // global list to do work on
 BookList myList;
 
@@ -473,6 +476,82 @@ void testAdminPurchase() {
     newAdmin.output();
 }
 
+// function will be built similar to the mod info function used in the main driver program
+void modInfo() {
+    char response = '0';
+
+    newAdmin.output(); // FOR TESTING REASONS
+
+    std::cout << std::endl;
+    std::cout << "Hello admin, what would you like to do within the edit menu?" << std::endl;
+    std::cout << "n - Change the name of a book" << std::endl;
+    std::cout << "a - Change the name of a book's author" << std::endl;
+    std::cout << "p - Change a book's publish date" << std::endl;
+    std::cout << "m - Change the price of a book" << std::endl;
+    std::cout << "x - Exit admin edit menu" << std::endl;
+    std::cin >> response;
+    std::cout << std::endl;
+
+    while (response != 'x') {
+        if (response == 'n') {
+            std::string newName = "";
+
+            std::cin.ignore(); // CRUCIAL MUST HAVE THIS
+            std::cout << "Please enter the new name of the book: ";
+            std::getline(std::cin, newName);
+
+            newAdmin.changeName(modInfoIDHelper(), newName);
+            break;
+        }
+        else if (response == 'a') {
+            std::string newAuthor = "";
+
+            std::cin.ignore(); // CRUCIAL MUST HAVE THIS
+            std::cout << "Please enter the new name of the author: ";
+            std::getline(std::cin, newAuthor);
+
+            newAdmin.changeAuthor(modInfoIDHelper(), newAuthor);
+            break;
+        }
+        else if (response == 'p') {
+            int newDate = 0;
+
+            std::cout << "Please enter the new publish date of the book: ";
+            std::cin >> newDate;
+
+            newAdmin.changePubDate(modInfoIDHelper(), newDate);
+            break;
+        }
+        else if (response == 'm') {
+            int newPrice = 0;
+
+            std::cout << "Please enter the new price of the book: ";
+            std::cin >> newPrice;
+
+            newAdmin.changePrice(modInfoIDHelper(), newPrice);
+            break;
+        }
+        else {
+            std::cout << "Please enter a valid response (n/a/p/m/x): ";
+            std::cin >> response;
+        }
+    }
+
+    std::cout << "Exited the admin edit menu successfully." << std::endl << std::endl;
+
+    newAdmin.output(); // FOR TESTING REASONS
+}
+
+// helper function that returns the ID that the user wants to pass into the modInfo function
+int modInfoIDHelper() {
+    int tempID = 0;
+
+    std::cout << "Please enter the ID of the book you want to modify: ";
+    std::cin >> tempID;
+
+    return tempID;
+}
+
 int main() {
     // RUN ONE TEST AT A TIME
 
@@ -523,5 +602,6 @@ int main() {
     //testAddEntryAndOutput();
     //testRemoveAndOutput();
 
-    testAdminPurchase();
+    //testAdminPurchase();
+    modInfo();
 }

@@ -43,6 +43,90 @@ void Admin::removeEntry(int tempID) {
     bookstoreList.remove(tempID);
 }
 
+// the change info mutators
+
+// changes the name of a book entry
+void Admin::changeName(int tempID, const std::string &newName) {
+    std::string response = "";
+    
+    // no need to check to see if the ID exists within the list (dont need to call exists())
+    // becase setName function will already check to see if the ID exists
+    std::cout << "Are you sure you would like to change the book's name to " << newName << "?: ";
+    std::cin >> response;
+    while (response != "yes" && response != "no") {
+        std::cout << "Please enter a valid response (yes/no): ";
+        std::cin >> response;
+    }
+
+    // check for conditions
+    if (response == "yes") {
+        bookstoreList.setName(tempID, newName);
+    } else {
+        std::cout << "The book name will not be changed." << std::endl;
+    }
+}
+
+// changes the name of the book's author
+void Admin::changeAuthor(int tempID, const std::string &newAuthor) {
+    std::string response = "";
+    
+    // no need to check to see if the ID exists within the list (dont need to call exists())
+    // becase setName function will already check to see if the ID exists
+    std::cout << "Are you sure you would like to change the author's name to " << newAuthor << "?: ";
+    std::cin >> response;
+    while (response != "yes" && response != "no") {
+        std::cout << "Please enter a valid response (yes/no): ";
+        std::cin >> response;
+    }
+
+    // check for conditions
+    if (response == "yes") {
+        bookstoreList.setAuthor(tempID, newAuthor);
+    } else {
+        std::cout << "The author's name will not be changed." << std::endl;
+    }
+}
+
+void Admin::changePubDate(int tempID, int newDate) {
+    std::string response = "";
+    
+    // no need to check to see if the ID exists within the list (dont need to call exists())
+    // becase setName function will already check to see if the ID exists
+    std::cout << "Are you sure you would like to change the book's publish date to " << newDate << "?: ";
+    std::cin >> response;
+    while (response != "yes" && response != "no") {
+        std::cout << "Please enter a valid response (yes/no): ";
+        std::cin >> response;
+    }
+
+    // check for conditions
+    if (response == "yes") {
+        bookstoreList.setPubDate(tempID, newDate);
+    } else {
+        std::cout << "The book's publish date will not be changed." << std::endl;
+    }
+}
+
+void Admin::changePrice(int tempID, int newPrice) {
+    std::string response = "";
+    
+    // no need to check to see if the ID exists within the list (dont need to call exists())
+    // becase setName function will already check to see if the ID exists
+    std::cout << "Are you sure you would like to change the book's price to $" << newPrice << "?: ";
+    std::cin >> response;
+    while (response != "yes" && response != "no") {
+        std::cout << "Please enter a valid response (yes/no): ";
+        std::cin >> response;
+    }
+
+    // check for conditions
+    if (response == "yes") {
+        bookstoreList.setPrice(tempID, newPrice);
+    } else {
+        std::cout << "The book's price will not be changed." << std::endl;
+    }
+}
+
 // the overriden purchase function
 // this function is unique to the ADMIN class because it automatically applies a 50% discount on the purchase
 void Admin::purchase(int tempID) {

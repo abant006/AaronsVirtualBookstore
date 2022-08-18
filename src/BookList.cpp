@@ -135,7 +135,6 @@ void BookList::setName(int tempID, const std::string &tempName) {
     // if it is, output an error message
     if (temp != nullptr) {
         temp->bookName = tempName;
-        // keep for now?
         std::cout << "Your changes have been made successfully to new name: " << temp->bookName << std::endl;
     } else {
         std::cout << "Error! No match could be found! Name not set!" << std::endl;

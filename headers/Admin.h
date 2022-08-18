@@ -27,9 +27,12 @@ class Admin : public StoreUser {
         Admin();
 
         // mutators
-        void modInfo();
         void addEntry(const std::string &tempName, const std::string &tempAuthor, int tempPub, int tempPrice);
         void removeEntry(int tempID);
+        void changeName(int tempID, const std::string &newName);
+        void changeAuthor(int tempID, const std::string &newAuthor);
+        void changePubDate(int tempID, int newDate);
+        void changePrice(int tempID, int newPrice);
         // overriden purchase function from the StoreUser base class
         void purchase(int tempID); // TODO
         // accessor
