@@ -55,6 +55,7 @@ class BookList {
         int getPrice(int tempID) const;
         std::string getAuthor(int tempID) const;
         int getPubDate(int tempID) const;
+        bool exists(int tempID) const;
         
 
         // output operator somewhere for printing the list

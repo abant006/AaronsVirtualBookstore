@@ -401,6 +401,20 @@ int BookList::getPubDate(int tempID) const {
     }
 }
 
+// returns true or false if the book exists within the list or not
+bool BookList::exists(int tempID) const {
+    BookEntry *temp = nullptr;
+
+    temp = this->linearSearch(tempID);
+
+    // if temp != nullptr, then there is a matching bookentry
+    if (temp != nullptr) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 std::ostream & operator<<(std::ostream &o, const BookList &list) {
     // create a temp BookEntry pointer that points to the beginning of the list
     BookEntry *temp = nullptr;
