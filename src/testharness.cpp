@@ -417,10 +417,10 @@ void testAddEntryAndOutput() {
 
     // prompt the admin to enter book entry information
     std::cout << "Please enter a book name: ";
-    std::cin >> tempName;
+    std::getline(std::cin, tempName);
     std::cout << std::endl;
     std::cout << "Please enter the author's name: ";
-    std::cin >> tempAuthor;
+    std::getline(std::cin, tempAuthor);
     std::cout << std::endl;
     std::cout << "Please enter the book's publish date: ";
     std::cin >> tempPub;
@@ -507,5 +507,5 @@ int main() {
     //testDuplicateID();
 
     //testAddEntryAndOutput();
-    //testRemoveAndOutput();
+    testRemoveAndOutput();
 }
