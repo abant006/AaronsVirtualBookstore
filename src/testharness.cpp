@@ -5,6 +5,7 @@
 #include "../headers/BookList.h"
 #include "../headers/StoreUser.h"
 #include "../headers/Admin.h"
+#include "../headers/Customer.h"
 
 void modInfo();
 int modInfoIDHelper();
@@ -552,6 +553,32 @@ int modInfoIDHelper() {
     return tempID;
 }
 
+//---------------------------------------------------------------------------
+//---------------------------------------------------------------------------
+//---------------------------------------------------------------------------
+Customer newCust;
+
+void testCustPurchase() {
+    int id = 0;
+
+    newCust.output();
+
+    std::cout << "Please enter the book's ID: ";
+    std::cin >> id;
+
+    newCust.purchase(id);
+
+    newCust.output();
+}
+
+void testCustOutputFilter() {
+    newCust.output();
+    std::cout << std::endl;
+    newCust.filter();
+    newCust.output();
+}
+
+
 int main() {
     // RUN ONE TEST AT A TIME
 
@@ -603,5 +630,11 @@ int main() {
     //testRemoveAndOutput();
 
     //testAdminPurchase();
-    modInfo();
+    //modInfo();
+
+
+    //testCustPurchase();
+    testCustOutputFilter();
+
+
 }

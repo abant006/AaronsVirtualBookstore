@@ -74,7 +74,7 @@ void StoreUser::filter() {
     std::cin >> response;
     std::cout << response << std::endl;
     while (response != "yes" && response != "no") {
-        std::cout << "Please enter a valid response (yes/no): " << std::endl;
+        std::cout << "Please enter a valid response (yes/no): ";
         std::cin >> response;
     }
 
