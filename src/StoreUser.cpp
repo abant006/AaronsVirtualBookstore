@@ -69,10 +69,9 @@ StoreUser::~StoreUser() {
 void StoreUser::filter() {
     std::string response = "";
     // first ask the user if they would like to sort the list in ascending ID number order
-    std::cout << "Are you sure you would like to view the book list in ascending order based on ID numbers?" << std::endl;
+    std::cout << "Are you sure you would like to view the book list in ascending order based on ID numbers?: ";
 
     std::cin >> response;
-    std::cout << response << std::endl;
     while (response != "yes" && response != "no") {
         std::cout << "Please enter a valid response (yes/no): ";
         std::cin >> response;
@@ -81,15 +80,18 @@ void StoreUser::filter() {
     if (response == "yes") {
         // call selection sort function on the list to sort it in ascending order
         bookstoreList.selection_sort();
+        std::cout << "The list has been filtered!" << std::endl;
+    } else {
+        std::cout << "The list has not been filtered." << std::endl;
     }
 }
 
 // accessors
 void StoreUser::output() const {
     // function will print the contents within the bookstoreList
-    std::cout << "ID" << std::setw(40) 
-        << "Book Name" << std::setw(40)
-        << "Author" << std::setw(40)
+    std::cout << "ID" << std::setw(42) 
+        << "Book Name" << std::setw(39)
+        << "Author" << std::setw(46)
         << "Publish Date" << std::setw(40)
         << "Price" << std::endl;
 

@@ -268,6 +268,7 @@ void BookList::remove(int tempID) {
                 if (curr->id == tempID) {
                     prev->next = curr->next; // link previous node to current's next node
                     delete curr;
+                    curr = prev; // dangling pointer reasons
                     break;
                 }
                 // loop to the next node
@@ -279,6 +280,8 @@ void BookList::remove(int tempID) {
             // if curr == nullptr, then that means there was no matching ID
             if (curr == nullptr) {
                 std::cout << "Cannot remove: No matching ID was found." << std::endl;
+            } else {
+                std::cout << "The book entry has been removed." << std::endl;
             }
         }
     }
