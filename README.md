@@ -19,8 +19,8 @@ Like stated in the general introduction, when you open the store, you will be as
 If you enter the wrong information **3 times** the store will close immediately.
 
 For reference:
-    - Username: StoreAdmin112
-    - Password: Password123
+> Username: StoreAdmin112
+> Password: Password123
 
 ![Admin Login Fail](https://github.com/abant006/AaronsVirtualBookstore/blob/master/BookstorePhotos/AdminLoginFAIL.PNG?raw=true)
 
@@ -85,7 +85,7 @@ Similar in look to the Admin menu, however, you will be met with 3 distinct opti
 --------------------------------
 **Purchasing an item as an CUSTOMER**
 
-Once pressing ***b***, you will be asked to enter thhe ID of a book you want to purchase from the store. After entering the ID, the store will ask for confirmation of your purchase with the name of the book and its final price. There will also be an option to enter a discount code if you have any. Please feel free to use the code *SummerSale22* to receive $4 off of any purchase!
+Once pressing ***b***, you will be asked to enter the ID of a book you want to purchase from the store. After entering the ID, the store will ask for confirmation of your purchase with the name of the book and its final price. There will also be an option to enter a discount code if you have any. Please feel free to use the code *SummerSale22* to receive $4 off of any purchase!
 
 *Please note* that if you enter the wrong discount code you will have to re-enter the purchase option from the menu.
 
