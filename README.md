@@ -53,4 +53,4 @@ Once pressing ***b***, you will be asked to enter thhe ID of a book you want to 
 **Outputting the list**
 Once pressing ***o***, the list of all the books currently in stock on the store will be printed out. Each entry will be split into respective columns of ID, Book Name, Author, Publish Date, and Price.
 
-![Admin Output List](https://github.com/abant006/AaronsVirtualBookstore/blob/master/BookstorePhotos/AdminMainMenu.PNG?raw=true)
+![Admin Output List](https://github.com/abant006/AaronsVirtualBookstore/blob/master/BookstorePhotos/AdminOutputMenu.PNG?raw=true)
