@@ -12,3 +12,8 @@ As we dive further into this manual, I'll go more in depth on the specifics, but
 Upon opening the store you'll immediately notice that you're being asked if you are an *Admin* or not. If you respond yes, you will be prompted to enter your login credentials. After that, you will be greeted with a menu asking what you would like to do. As a regular customer this all very similar, except you will not have to enter any login credentials.
 
 ## Admin Users
+Like stated in the general introduction, when you open the store, you will be asked if you are an admin or not. Following this, you will be asked to enter your login credentials.
+
+***PLEASE BE WARY***
+
+If you enter the wrong information **3 times** the store will close immediately.
