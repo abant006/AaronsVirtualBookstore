@@ -80,4 +80,30 @@ As a customer you will not have as much access as an admin (obviously). And as s
 ###### Main Menu for Customers
 Similar in look to the Admin menu, however, you will be met with 3 distinct options I have stated in the customer overview.
 
-![Customer Main Menu](https://github.com/abant006/AaronsVirtualBookstore/blob/master/BookstorePhotos/AdminOutputMenu.PNG?raw=true)
+![Customer Main Menu](https://github.com/abant006/AaronsVirtualBookstore/blob/master/BookstorePhotos/CustomerMainMenu.PNG?raw=true)
+
+--------------------------------
+**Purchasing an item as an CUSTOMER**
+
+Once pressing ***b***, you will be asked to enter thhe ID of a book you want to purchase from the store. After entering the ID, the store will ask for confirmation of your purchase with the name of the book and its final price. There will also be an option to enter a discount code if you have any. Please feel free to use the code *SummerSale22* to receive $4 off of any purchase!
+
+*Please note* that if you enter the wrong discount code you will have to re-enter the purchase option from the menu.
+
+---------------------
+**Outputting the list**
+
+Once pressing ***o***, the list of all the books currently in stock on the store will be printed out. Each entry will be split into respective columns of ID, Book Name, Author, Publish Date, and Price.
+
+*Please note* that this is the exact same as admin users.
+
+---------------------
+**Filtering the list**
+
+Once pressing ***f***, you will be asked if you would like to filter the list from least to greatest in terms of ID numbers. If you reply yes, the list will be filtered and ready to output.
+
+*Please note* that this is the exact same as admin users.
+
+--------------------------------
+
+## Closing Comments
+Thank you so much for taking the time to read all this, and I sincerely hope you have a great rest of your day wherever you may be!
