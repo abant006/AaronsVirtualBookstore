@@ -73,4 +73,11 @@ Once pressing ***f***, you will be asked if you would like to filter the list fr
 Once pressing ***d***, you will be asked if you would like to display the list od ID numbers the store is using. If you answer yes, all the ID numbers will be printed in a list.
 
 *Please note* that even when you add a new entry to the list, the entry's ID will also be added to this ID list.
---------------------------------
+
+## Customers
+As a customer you will not have as much access as an admin (obviously). And as such, you will be able to output the list of books in stock, filter them, and purchase one.
+
+###### Main Menu for Customers
+Similar in look to the Admin menu, however, you will be met with 3 distinct options I have stated in the customer overview.
+
+![Customer Main Menu](https://github.com/abant006/AaronsVirtualBookstore/blob/master/BookstorePhotos/AdminOutputMenu.PNG?raw=true)
