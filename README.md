@@ -30,11 +30,13 @@ Once past the login screen, you will be greeted by a menu screen with many diffe
 ![Admin Main Menu](https://github.com/abant006/AaronsVirtualBookstore/blob/master/BookstorePhotos/AdminMainMenu.PNG?raw=true)
 
 **Adding A book entry**
+
 Once pressing ***a***, you will be asked to enter a book's name, author's name, book's publish date, and its price.
 
 *Please note* that you will NOT need to enter the Book's ID, because those are entered automatically by the store once a book entry is made.
 
 **Removing a book entry**
+
 Once pressing ***r***, you will be asked to enter the ID of the entry you would like to remove from the store.
 
 *Please note* that if you enter an invalid ID, no entry will be removed.
