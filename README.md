@@ -40,3 +40,17 @@ Once pressing ***a***, you will be asked to enter a book's name, author's name, 
 Once pressing ***r***, you will be asked to enter the ID of the entry you would like to remove from the store.
 
 *Please note* that if you enter an invalid ID, no entry will be removed.
+
+**Opening the admin edit menu**
+
+Once pressing ***e***, a menu similar looking to the main menu will appear. In this menu you will see options to change the name of any given book, any given author, any given publish date, and any given price. Like the main menu, just press the corressponding button to access that option and follow the instructions to modify the entry.
+
+**Purchasing an item as an ADMIN**
+Once pressing ***b***, you will be asked to enter thhe ID of a book you want to purchase from the store. Because you are an admin, the store offers a 50% discount on all purchases. After entering the ID, the store will ask for confirmation of your purchase with the name of the book and its final price.
+
+*Please note* that if you enter the wrong ID number you will not be able to purchase the book.
+
+**Outputting the list**
+Once pressing ***o***, the list of all the books currently in stock on the store will be printed out. Each entry will be split into respective columns of ID, Book Name, Author, Publish Date, and Price.
+
+![Admin Output List](https://github.com/abant006/AaronsVirtualBookstore/blob/master/BookstorePhotos/AdminMainMenu.PNG?raw=true)
