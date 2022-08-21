@@ -253,10 +253,12 @@ void BookList::remove(int tempID) {
         // first condition, if the entry we want to remove is in the front 
         if (tempID == head->id) {
             pop_front();
+            std::cout << "The book entry has been removed." << std::endl;
         }
         // second condition, if the entry we want to remove is in the back
         else if (tempID == tail->id) {
             pop_back();
+            std::cout << "The book entry has been removed." << std::endl;
         }
         // third condition, just remove from elsewhere on the list
         else {
