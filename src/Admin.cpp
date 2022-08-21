@@ -35,6 +35,7 @@ void Admin::addEntry(const std::string &tempName, const std::string &tempAuthor,
 
     // if it reaches here, then that means the tempID is NOT in the list
     // with all the values we have now, push it back into the list
+    IDList.push_back(tempID);
     bookstoreList.push_back(tempID, tempName, tempAuthor, tempPub, tempPrice);
 }
 
