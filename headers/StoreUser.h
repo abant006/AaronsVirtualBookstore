@@ -36,9 +36,7 @@ class StoreUser {
         void output() const;
 
     protected:
-        // IN STOREUSER'S CONSTRUCTOR DO I HAVE TO CALL BOOKSTORELIST'S CONSTRUCTOR? OR HOW DOES IT WORK
         BookList bookstoreList;
-        // SAME QUESTION HERE? OR HOW DO I CONSTRUCT IT???
         std::vector<int> IDList; // stores any and all currently/previously used Book ID's to ensure no duplicates are made
         
         // private helper functions
